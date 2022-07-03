@@ -48,7 +48,7 @@
             geometry = new THREE.BoxGeometry(1, 1, 1)
             material = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
             cube[i] = new THREE.Mesh(geometry, material)
-            cube[i].position.set(Math.floor(Math.random()*101), Math.floor(Math.random()*101), Math.floor(Math.random()*101))
+            cube[i].position.set(0, 0, i)
             this.scene.add(cube[i])
             // add physics to an existing object
             this.physics.add.existing(cube[i])
