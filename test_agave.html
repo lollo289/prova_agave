@@ -45,8 +45,8 @@
           geometry = new THREE.PlaneGeometry(600, 1200)
           material = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
           var plane = new THREE.Mesh(geometry, material)
-          plane.body.setCollisionFlags(1)
           this.physics.add.existing(plane)
+          plane.body.setCollisionFlags(1)
           this.scene.add(plane)
 
 
