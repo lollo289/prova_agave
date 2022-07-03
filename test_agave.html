@@ -39,20 +39,29 @@
           // position camera
           this.camera.position.set(10, 10, 20)
 
-          // Make N cubes
+          //create converyor
           var geometry;
           var material;
-          var cube=[];
+          geometry = new THREE.PlaneGeometry(600, 1200)
+          material = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+          var plane = new THREE.Mesh(geometry, material)
+          this.physics.add.existing(plane)
+          this.scene.add(plane)
 
-          for (var i=0;i<50;i++){
-            geometry = new THREE.BoxGeometry(1, 1, 1)
-            material = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
-            cube[i] = new THREE.Mesh(geometry, material)
-            cube[i].position.set(0, 0, i)
-            this.scene.add(cube[i])
-            // add physics to an existing object
-            this.physics.add.existing(cube[i])
-          }
+
+          // Make N cubes
+
+          // var cube=[];
+          //
+          // for (var i=0;i<50;i++){
+          //   geometry = new THREE.BoxGeometry(1, 1, 1)
+          //   material = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+          //   cube[i] = new THREE.Mesh(geometry, material)
+          //   cube[i].position.set(0, 0, i)
+          //   this.scene.add(cube[i])
+          //   // add physics to an existing object
+          //   this.physics.add.existing(cube[i])
+          // }
         }
 
         update() {
